@@ -5,7 +5,7 @@ plugins {
     id 'com.jfrog.bintray' version '1.8.4'
 }
 
-group = 'net.notjustanna'
+group = 'net.notjustanna.libs'
 version = '1.0'
 
 sourceCompatibility = 1.8
