@@ -1,6 +1,19 @@
 package net.notjustanna.patreon.entity;
 
+import org.jetbrains.annotations.NotNull;
+
+/**
+ * The record of a user's membership to a campaign. Remains consistent across months of pledging.
+ * <br>
+ * Due to the way that the Patreon API is, the Member object was split between {@link CampaignMember} and {@link CampaignPatron}.
+ * <br>
+ * Please use {@link CampaignMember#isPatron()} and {@link CampaignMember#asPatron()} to get the extra fields.
+ */
 public interface CampaignMember extends PatreonEntity {
+    /**
+     * Full name of the member user.
+     */
+    @NotNull
     String fullName();
 
     /**
@@ -8,18 +21,29 @@ public interface CampaignMember extends PatreonEntity {
      */
     boolean isFollower();
 
+    /**
+     * The user who is pledging to the campaign.
+     */
     PatreonUser user();
 
+    /**
+     * The campaign that the membership is for.
+     */
     Campaign campaign();
 
     /**
      * If false, apparently Patreon gave you someone who follows the campaign as a member.
      */
-    boolean isPatron();
+    default boolean isPatron() {
+        return this instanceof CampaignPatron;
+    }
 
-    default Patron asPatron() {
-        if (this instanceof Patron) {
-            return (Patron) this;
+    /**
+     * Casts this object to a {@link CampaignPatron}, which has way more information.
+     */
+    default CampaignPatron asPatron() {
+        if (this instanceof CampaignPatron) {
+            return (CampaignPatron) this;
         }
 
         throw new IllegalStateException("the Member is not a Patron");

@@ -3,8 +3,7 @@ package net.notjustanna.patreon.entity;
 public enum PatronStatus {
     ACTIVE_PATREON,
     DECLINED_PATREON,
-    FORMER_PATREON,
-    NOT_A_PATREON;
+    FORMER_PATREON;
 
     public static PatronStatus forStatus(String status) {
         for (PatronStatus value : values()) {

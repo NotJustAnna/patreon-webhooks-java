@@ -68,8 +68,8 @@ public class EntityBuilder {
         boolean chargedImmediately = attributes.optBoolean("is_charged_immediately");
         boolean monthly = attributes.getBoolean("is_monthly");
         boolean nsfw = attributes.getBoolean("is_nsfw");
-        String imageUrl = attributes.getString("image_url");
-        String imageSmallUrl = attributes.getString("image_small_url");
+        String bannerUrl = attributes.getString("image_url");
+        String avatarUrl = attributes.getString("image_small_url");
         String creationName = attributes.optString("creation_name");
         String discordServerId = attributes.optString("discord_server_id");
         String mainVideoEmbed = attributes.optString("main_video_embed");
@@ -83,7 +83,7 @@ public class EntityBuilder {
         String thanksVideoUrl = attributes.optString("thanks_video_url");
 
         return new CampaignImpl(id, createdAt, patronCount, pledgeUrl, chargedImmediately, monthly, nsfw,
-            imageUrl, imageSmallUrl, creationName, discordServerId, mainVideoEmbed, mainVideoUrl, oneLiner,
+            bannerUrl, avatarUrl, creationName, discordServerId, mainVideoEmbed, mainVideoUrl, oneLiner,
             payPerName, publishedAt, summary, thanksEmbed, thanksMessage, thanksVideoUrl);
     }
 
@@ -109,7 +109,7 @@ public class EntityBuilder {
         int currentlyPaying = attributes.getInt("currently_entitled_amount_cents");
         int lifetimePayed = attributes.getInt("lifetime_support_cents");
 
-        return new PatronImpl(id, fullName, isFollower, patronStatus, pledgeStartDate,
+        return new CampaignPatronImpl(id, fullName, isFollower, patronStatus, pledgeStartDate,
             lastChargeStatus, lastChargeDate, currentlyPaying, lifetimePayed, user, campaign);
     }
 
@@ -133,5 +133,11 @@ public class EntityBuilder {
         }
 
         return event;
+    }
+
+    static class RawWebhookEvent {
+        JSONObject member;
+        JSONObject campaign;
+        JSONObject user;
     }
 }

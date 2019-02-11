@@ -1,11 +1,12 @@
 package net.notjustanna.patreon.entity.impl;
 
+import org.jetbrains.annotations.NotNull;
 import net.notjustanna.patreon.entity.*;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-public class PatronImpl implements Patron {
+public class CampaignPatronImpl implements CampaignPatron {
     private final String id;
     private final String fullName;
     private final boolean isFollower;
@@ -18,7 +19,7 @@ public class PatronImpl implements Patron {
     private final PatreonUser user;
     private final Campaign campaign;
 
-    public PatronImpl(String id, String fullName, boolean isFollower, PatronStatus patronStatus, OffsetDateTime pledgeStartDate, ChargeStatus lastChargeStatus, OffsetDateTime lastChargeDate, int currentlyPaying, int lifetimePayed, PatreonUser user, Campaign campaign) {
+    public CampaignPatronImpl(String id, String fullName, boolean isFollower, PatronStatus patronStatus, OffsetDateTime pledgeStartDate, ChargeStatus lastChargeStatus, OffsetDateTime lastChargeDate, int currentlyPaying, int lifetimePayed, PatreonUser user, Campaign campaign) {
         this.id = id;
         this.fullName = fullName;
         this.isFollower = isFollower;
@@ -32,11 +33,13 @@ public class PatronImpl implements Patron {
         this.campaign = campaign;
     }
 
+    @NotNull
     @Override
     public String id() {
         return id;
     }
 
+    @NotNull
     @Override
     public String fullName() {
         return fullName;
@@ -47,16 +50,19 @@ public class PatronImpl implements Patron {
         return isFollower;
     }
 
+    @NotNull
     @Override
     public PatronStatus patronStatus() {
         return patronStatus;
     }
 
+    @NotNull
     @Override
     public OffsetDateTime pledgeStartDate() {
         return pledgeStartDate;
     }
 
+    @NotNull
     @Override
     public ChargeStatus lastChargeStatus() {
         return lastChargeStatus;
@@ -93,15 +99,10 @@ public class PatronImpl implements Patron {
     }
 
     @Override
-    public boolean isPatron() {
-        return true;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PatronImpl)) return false;
-        PatronImpl that = (PatronImpl) o;
+        if (!(o instanceof CampaignPatronImpl)) return false;
+        CampaignPatronImpl that = (CampaignPatronImpl) o;
         return id.equals(that.id);
     }
 

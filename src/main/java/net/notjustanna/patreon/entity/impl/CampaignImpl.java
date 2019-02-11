@@ -1,5 +1,6 @@
 package net.notjustanna.patreon.entity.impl;
 
+import org.jetbrains.annotations.NotNull;
 import net.notjustanna.patreon.entity.Campaign;
 
 import java.time.OffsetDateTime;
@@ -13,8 +14,8 @@ public class CampaignImpl implements Campaign {
     private final boolean chargedImmediately;
     private final boolean monthly;
     private final boolean nsfw;
-    private final String imageUrl;
-    private final String imageSmallUrl;
+    private final String bannerUrl;
+    private final String avatarUrl;
     private final String creationName;
     private final String discordServerId;
     private final String mainVideoEmbed;
@@ -27,7 +28,7 @@ public class CampaignImpl implements Campaign {
     private final String thanksMessage;
     private final String thanksVideoUrl;
 
-    public CampaignImpl(String id, OffsetDateTime createdAt, int patronCount, String pledgeUrl, boolean chargedImmediately, boolean monthly, boolean nsfw, String imageUrl, String imageSmallUrl, String creationName, String discordServerId, String mainVideoEmbed, String mainVideoUrl, String oneLiner, String payPerName, OffsetDateTime publishedAt, String summary, String thanksEmbed, String thanksMessage, String thanksVideoUrl) {
+    public CampaignImpl(String id, OffsetDateTime createdAt, int patronCount, String pledgeUrl, boolean chargedImmediately, boolean monthly, boolean nsfw, String bannerUrl, String avatarUrl, String creationName, String discordServerId, String mainVideoEmbed, String mainVideoUrl, String oneLiner, String payPerName, OffsetDateTime publishedAt, String summary, String thanksEmbed, String thanksMessage, String thanksVideoUrl) {
         this.id = id;
         this.createdAt = createdAt;
         this.patronCount = patronCount;
@@ -35,8 +36,8 @@ public class CampaignImpl implements Campaign {
         this.chargedImmediately = chargedImmediately;
         this.monthly = monthly;
         this.nsfw = nsfw;
-        this.imageUrl = imageUrl;
-        this.imageSmallUrl = imageSmallUrl;
+        this.bannerUrl = bannerUrl;
+        this.avatarUrl = avatarUrl;
         this.creationName = creationName;
         this.discordServerId = discordServerId;
         this.mainVideoEmbed = mainVideoEmbed;
@@ -50,11 +51,13 @@ public class CampaignImpl implements Campaign {
         this.thanksVideoUrl = thanksVideoUrl;
     }
 
+    @NotNull
     @Override
     public String id() {
         return id;
     }
 
+    @NotNull
     @Override
     public OffsetDateTime createdAt() {
         return createdAt;
@@ -65,6 +68,7 @@ public class CampaignImpl implements Campaign {
         return patronCount;
     }
 
+    @NotNull
     @Override
     public String pledgeUrl() {
         return pledgeUrl;
@@ -85,14 +89,16 @@ public class CampaignImpl implements Campaign {
         return nsfw;
     }
 
+    @NotNull
     @Override
-    public String imageUrl() {
-        return imageUrl;
+    public String bannerUrl() {
+        return bannerUrl;
     }
 
+    @NotNull
     @Override
-    public String imageSmallUrl() {
-        return imageSmallUrl;
+    public String avatarUrl() {
+        return avatarUrl;
     }
 
     @Override

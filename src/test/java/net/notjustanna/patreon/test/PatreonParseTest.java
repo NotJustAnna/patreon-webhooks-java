@@ -1,4 +1,7 @@
-package net.notjustanna.patreon;
+package net.notjustanna.patreon.test;
+
+import net.notjustanna.patreon.PatreonWebhookEvent;
+import net.notjustanna.patreon.PatreonWebhooksJava;
 
 public class PatreonParseTest {
 
@@ -103,7 +106,7 @@ public class PatreonParseTest {
         "}";
 
     public static void main(String[] args) {
-        PatreonWebhookEvent event = PatreonWebhookJava.parse("members:create", MESSAGE);
+        PatreonWebhookEvent event = PatreonWebhooksJava.parse("members:create", MESSAGE);
 
         System.out.println(event);
         System.out.println(event.user().socialConnections());

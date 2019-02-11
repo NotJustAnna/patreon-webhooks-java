@@ -1,5 +1,6 @@
 package net.notjustanna.patreon.entity.impl;
 
+import org.jetbrains.annotations.NotNull;
 import net.notjustanna.patreon.entity.SocialConnection;
 import net.notjustanna.patreon.entity.SocialConnectionType;
 
@@ -14,11 +15,13 @@ public class SocialConnectionImpl implements SocialConnection {
         this.userId = userId;
     }
 
+    @NotNull
     @Override
     public SocialConnectionType type() {
         return type;
     }
 
+    @NotNull
     @Override
     public String userId() {
         return userId;

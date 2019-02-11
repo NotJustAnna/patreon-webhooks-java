@@ -1,5 +1,6 @@
 package net.notjustanna.patreon.entity.impl;
 
+import org.jetbrains.annotations.NotNull;
 import net.notjustanna.patreon.entity.Campaign;
 import net.notjustanna.patreon.entity.CampaignMember;
 import net.notjustanna.patreon.entity.PatreonUser;
@@ -21,11 +22,13 @@ public class CampaignMemberImpl implements CampaignMember {
         this.campaign = campaign;
     }
 
+    @NotNull
     @Override
     public String id() {
         return id;
     }
 
+    @NotNull
     @Override
     public String fullName() {
         return fullName;
@@ -44,11 +47,6 @@ public class CampaignMemberImpl implements CampaignMember {
     @Override
     public Campaign campaign() {
         return campaign;
-    }
-
-    @Override
-    public boolean isPatron() {
-        return false;
     }
 
     @Override

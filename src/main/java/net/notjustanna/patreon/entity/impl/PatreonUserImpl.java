@@ -1,8 +1,8 @@
 package net.notjustanna.patreon.entity.impl;
 
+import org.jetbrains.annotations.NotNull;
 import net.notjustanna.patreon.entity.PatreonUser;
 import net.notjustanna.patreon.entity.SocialConnection;
-import net.notjustanna.patreon.entity.SocialConnectionType;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -33,16 +33,19 @@ public class PatreonUserImpl implements PatreonUser {
         this.socialConnections = socialConnections;
     }
 
+    @NotNull
     @Override
     public String id() {
         return id;
     }
 
+    @NotNull
     @Override
     public OffsetDateTime created() {
         return created;
     }
 
+    @NotNull
     @Override
     public String fullName() {
         return fullName;
@@ -68,30 +71,22 @@ public class PatreonUserImpl implements PatreonUser {
         return email;
     }
 
+    @NotNull
     @Override
     public String thumbUrl() {
         return thumbUrl;
     }
 
+    @NotNull
     @Override
     public String imageUrl() {
         return imageUrl;
     }
 
+    @NotNull
     @Override
     public Set<SocialConnection> socialConnections() {
         return socialConnections;
-    }
-
-    @Override
-    public SocialConnection socialConnection(SocialConnectionType type) {
-        for (SocialConnection connection : socialConnections) {
-            if (connection.type() == type) {
-                return connection;
-            }
-        }
-
-        return null;
     }
 
     @Override

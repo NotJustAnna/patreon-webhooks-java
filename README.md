@@ -9,5 +9,5 @@ Get it on JCenter:
 
 Using It:
 
-Just use ``net.notjustanna.patreon.PatreonWebhookJava#parse`` methods.
+Just use ``PatreonWebhookJava#parse`` methods.
 

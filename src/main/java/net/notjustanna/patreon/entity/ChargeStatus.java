@@ -12,10 +12,12 @@ public enum ChargeStatus {
 
 
     public static ChargeStatus forStatus(String status) {
+        if (status == null) return NOT_CHARGED_YET;
+
         for (ChargeStatus value : values()) {
             if (value.name().equalsIgnoreCase(status)) return value;
         }
 
-        return NOT_CHARGED_YET;
+        throw new IllegalArgumentException("Status " + status + " is not a valid status!");
     }
 }
