@@ -1,4 +1,4 @@
-package net.notjustanna.patreon.entity;
+package net.notjustanna.libs.patreonwebhooks.entity;
 
 public enum EventType {
     /**

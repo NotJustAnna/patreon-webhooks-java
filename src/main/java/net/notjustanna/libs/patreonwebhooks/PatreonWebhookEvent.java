@@ -1,10 +1,10 @@
-package net.notjustanna.patreon;
+package net.notjustanna.libs.patreonwebhooks;
 
 import org.jetbrains.annotations.NotNull;
-import net.notjustanna.patreon.entity.Campaign;
-import net.notjustanna.patreon.entity.CampaignMember;
-import net.notjustanna.patreon.entity.EventType;
-import net.notjustanna.patreon.entity.PatreonUser;
+import net.notjustanna.libs.patreonwebhooks.entity.Campaign;
+import net.notjustanna.libs.patreonwebhooks.entity.CampaignMember;
+import net.notjustanna.libs.patreonwebhooks.entity.EventType;
+import net.notjustanna.libs.patreonwebhooks.entity.PatreonUser;
 
 /**
  * This is the main data class of the API, and represents an event received from a webhook as an entity.

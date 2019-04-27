@@ -1,6 +1,6 @@
-package net.notjustanna.patreon.entity;
+package net.notjustanna.libs.patreonwebhooks.entity;
 
-import net.notjustanna.patreon.util.PatreonUtil;
+import net.notjustanna.libs.patreonwebhooks.util.PatreonUtil;
 
 public enum SocialConnectionType {
     YOUTUBE,

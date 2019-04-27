@@ -1,7 +1,7 @@
-package net.notjustanna.patreon.entity.impl;
+package net.notjustanna.libs.patreonwebhooks.entity.impl;
 
 import org.jetbrains.annotations.NotNull;
-import net.notjustanna.patreon.entity.*;
+import net.notjustanna.libs.patreonwebhooks.entity.*;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;

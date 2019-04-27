@@ -11,21 +11,21 @@ version = '1.1'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
     compile 'org.jetbrains:annotations:13.0'
-    compile group: 'org.json', name: 'json', version: '20180813'
+    compile 'org.json:json:20180813'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
+    archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+    archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
@@ -61,8 +61,9 @@ bintray {
     pkg {
         repo = 'maven'
         name = project.name.toString()
+        userOrg = 'notjustanna'
         licenses = ['MIT']
-        vcsUrl = 'https://github.com/arubot/patreon-webhooks-java.git'
+        vcsUrl = 'https://github.com/notjustanna/patreon-webhooks-java.git'
         publish = true
         version {
             name = project.version
@@ -72,5 +73,5 @@ bintray {
 
 bintrayUpload {
     dependsOn build
-    dependsOn 'publishBintrayReleasePublicationToMavenLocal'
+    dependsOn publishToMavenLocal
 }

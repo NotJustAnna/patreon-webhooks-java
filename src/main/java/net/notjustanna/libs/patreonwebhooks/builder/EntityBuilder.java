@@ -1,10 +1,10 @@
-package net.notjustanna.patreon.builder;
+package net.notjustanna.libs.patreonwebhooks.builder;
 
 import org.json.JSONObject;
-import net.notjustanna.patreon.PatreonWebhookEvent;
-import net.notjustanna.patreon.entity.*;
-import net.notjustanna.patreon.entity.impl.*;
-import net.notjustanna.patreon.util.PatreonUtil;
+import net.notjustanna.libs.patreonwebhooks.PatreonWebhookEvent;
+import net.notjustanna.libs.patreonwebhooks.entity.*;
+import net.notjustanna.libs.patreonwebhooks.entity.impl.*;
+import net.notjustanna.libs.patreonwebhooks.util.PatreonUtil;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;

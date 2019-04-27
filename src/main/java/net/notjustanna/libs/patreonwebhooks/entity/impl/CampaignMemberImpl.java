@@ -1,9 +1,9 @@
-package net.notjustanna.patreon.entity.impl;
+package net.notjustanna.libs.patreonwebhooks.entity.impl;
 
 import org.jetbrains.annotations.NotNull;
-import net.notjustanna.patreon.entity.Campaign;
-import net.notjustanna.patreon.entity.CampaignMember;
-import net.notjustanna.patreon.entity.PatreonUser;
+import net.notjustanna.libs.patreonwebhooks.entity.Campaign;
+import net.notjustanna.libs.patreonwebhooks.entity.CampaignMember;
+import net.notjustanna.libs.patreonwebhooks.entity.PatreonUser;
 
 import java.util.Objects;
 

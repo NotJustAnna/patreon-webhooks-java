@@ -1,7 +1,7 @@
-package net.notjustanna.patreon.test;
+package net.notjustanna.libs.patreonwebhooks.test;
 
-import net.notjustanna.patreon.PatreonWebhookEvent;
-import net.notjustanna.patreon.PatreonWebhooksJava;
+import net.notjustanna.libs.patreonwebhooks.PatreonWebhookEvent;
+import net.notjustanna.libs.patreonwebhooks.PatreonWebhooksJava;
 
 public class PatreonParseTest {
 

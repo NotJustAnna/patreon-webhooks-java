@@ -1,8 +1,8 @@
-package net.notjustanna.patreon.entity.impl;
+package net.notjustanna.libs.patreonwebhooks.entity.impl;
 
 import org.jetbrains.annotations.NotNull;
-import net.notjustanna.patreon.entity.SocialConnection;
-import net.notjustanna.patreon.entity.SocialConnectionType;
+import net.notjustanna.libs.patreonwebhooks.entity.SocialConnection;
+import net.notjustanna.libs.patreonwebhooks.entity.SocialConnectionType;
 
 import java.util.Objects;
 

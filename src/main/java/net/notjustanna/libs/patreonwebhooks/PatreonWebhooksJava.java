@@ -1,8 +1,8 @@
-package net.notjustanna.patreon;
+package net.notjustanna.libs.patreonwebhooks;
 
 import org.json.JSONObject;
-import net.notjustanna.patreon.builder.EntityBuilder;
-import net.notjustanna.patreon.util.PatreonUtil;
+import net.notjustanna.libs.patreonwebhooks.builder.EntityBuilder;
+import net.notjustanna.libs.patreonwebhooks.util.PatreonUtil;
 
 /**
  * <p>Entry point of the API.</p>

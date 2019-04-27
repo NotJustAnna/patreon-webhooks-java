@@ -1,4 +1,4 @@
-package net.notjustanna.patreon;
+package net.notjustanna.libs.patreonwebhooks;
 
 /**
  * Exception thrown if the signature provided is invalid.
